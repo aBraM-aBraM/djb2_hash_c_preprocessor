@@ -1,6 +1,7 @@
 # DJB2 Hash via C/C++ Preprocessor
 
 This is a compile time constant implementation of the DJB2 Hash using the C/C++ Preprocessor.
+You can generate the preprocessor macros using `python3 gen_djb2.py [MAXIMUM_HASH_STRING_LENGTH=25]`
 
 ## Why is this useful
 
@@ -49,7 +50,6 @@ previous version but its cumbersome and hard.
 ## Using My Solution
 
 My solution allows taking the first solution and having an ID generated automatically from the error name.
-There's still a small chance for collisions for paranoids buts its a much nicer solution.
 
 The hash support having a shorter name than max hash length.
 
@@ -59,3 +59,7 @@ The hash support having a shorter name than max hash length.
 MYERROR(GENERAL_ERROR, "Unknown error occured!");
 MYERROR(OS_ERROR, "OS error occured!");
 ```
+
+A full tested solution can be seen in `main.c` build it using `make all` and running either `example` or `example-debug`
+
+If you're paranoid you'd say that there's still a small chance for collisions see `paranoid.c`. `make paranoid && ./paranoid`
